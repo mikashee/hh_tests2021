@@ -14,21 +14,12 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestStart_Test {
+public class TestStart_Test extends BaseGuiTest{
     @Test
     public void test_te(){
 
 
         Cookie ck = new Cookie("hhtoken","Goe8ETKKBVJVHHz_WyEglIHecLoP","/");
-
-
-        //запуск браузера
-        Map<String, Object> prefs = new HashMap<String, Object>();
-        //prefs.put("download.default_directory", downloadDirectory);
-        System.setProperty("webdriver.chrome.driver", "C:\\WORK\\AllDrivers\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", prefs);
-        WebDriver driver = new ChromeDriver(options);
 
         //открытие сайта
         driver.get("http://hh.ru");
@@ -59,7 +50,6 @@ public class TestStart_Test {
 
         System.out.println(accName);
 
-        driver.close();
     }
 
     boolean isElementOnPage(WebDriver driver, String locator){
